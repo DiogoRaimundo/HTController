@@ -1,6 +1,8 @@
 #include <iostream>
-#include "pch.h"
 #include "gtest/gtest.h"
+
+#include "pch.h"
+
 #include "threshold_sensor_monitor.h"
 #include "monitor_threshold_type.h"
 #include "monitor_trigger_type.h"
