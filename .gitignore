@@ -31,6 +31,9 @@
 *.out
 *.app
 
+# Include Packages folder
+!packages/**
+
 # Build results
 x64/
 
