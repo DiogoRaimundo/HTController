@@ -6,67 +6,77 @@
 #include "monitor_trigger_type.h"
 #include "base_monitor_actuator.h"
 
-class ThresholdSensorMonitorActuator :public BaseMonitorActuator {
+class ThresholdSensorMonitorTestFixture : public ::testing::Test, public BaseMonitorActuator {
 private:
-	int callbackCallCounter;
+	int callbackCallCounter = 0;
 
-public:
-	ThresholdSensorMonitorActuator() : callbackCallCounter(0) {	}
-
-	virtual void triggerActuator() {
-		std::cerr << "trigger called" << std::endl;
-
+protected:
+	virtual void triggerActuator() override {
 		callbackCallCounter++;
 	}
 
 	int getCallCounter() {
 		return callbackCallCounter;
 	}
+
+	void updateAndExpectCallCount(ThresholdSensorMonitor* monitor, int updateValue, int expectedCallCount) {
+		monitor->update(updateValue);
+		EXPECT_EQ(getCallCounter(), expectedCallCount);
+	}
 };
 
-TEST(ThresholdSensorMonitor, MonitorInitialization) {
-	BaseMonitorActuator* actuator = new ThresholdSensorMonitorActuator;
-	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, actuator);
+TEST_F(ThresholdSensorMonitorTestFixture, TestInitialization) {
+	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, this);
+
+	EXPECT_EQ(getCallCounter(), 0);
+}
+
+TEST_F(ThresholdSensorMonitorTestFixture, MonitorInitialization) {
+	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, this);
 
 	int thresholdValue = monitor.getThresholdValue();
 
 	EXPECT_EQ(thresholdValue, 15);
 }
 
-TEST(ThresholdSensorMonitor, AllwaysTriggerMonitorGreaterThanThreshold) {
-	ThresholdSensorMonitorActuator* actuator = new ThresholdSensorMonitorActuator;
-	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, actuator);
+TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerMonitorGreaterThanThreshold) {
+	ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterThan, this);
 
-	EXPECT_EQ(actuator->getCallCounter(), 0);
-
-	monitor.update(14);
-	EXPECT_EQ(actuator->getCallCounter(), 0);
-
-	monitor.update(15);
-	EXPECT_EQ(actuator->getCallCounter(), 0);
-
-	monitor.update(16);
-	EXPECT_EQ(actuator->getCallCounter(), 1);
-
-	monitor.update(17);
-	EXPECT_EQ(actuator->getCallCounter(), 2);
+	updateAndExpectCallCount(monitor, 14, 0);
+	updateAndExpectCallCount(monitor, 15, 0);
+	updateAndExpectCallCount(monitor, 16, 1);
+	updateAndExpectCallCount(monitor, 17, 2);
 }
 
-TEST(ThresholdSensorMonitor, TriggerOnlyOnceMonitorGreaterThanThreshold) {
-	ThresholdSensorMonitorActuator* actuator = new ThresholdSensorMonitorActuator;
-	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, MonitorTriggerType::TriggerOnlyOnce, actuator);
+TEST_F(ThresholdSensorMonitorTestFixture, TriggerOnlyOnceMonitorGreaterThanThreshold) {
+	ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterThan, MonitorTriggerType::TriggerOnlyOnce, this);
 
-	EXPECT_EQ(actuator->getCallCounter(), 0);
+	updateAndExpectCallCount(monitor, 14, 0);
+	updateAndExpectCallCount(monitor, 15, 0);
+	updateAndExpectCallCount(monitor, 16, 1);
+	updateAndExpectCallCount(monitor, 17, 1);
+}
 
-	monitor.update(14);
-	EXPECT_EQ(actuator->getCallCounter(), 0);
+TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerMonitorGreaterOrEqualThanThreshold) {
+	ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterOrEqualThan, this);
 
-	monitor.update(15);
-	EXPECT_EQ(actuator->getCallCounter(), 0);
+	updateAndExpectCallCount(monitor, 14, 0);
+	updateAndExpectCallCount(monitor, 15, 1);
+	updateAndExpectCallCount(monitor, 16, 2);
+}
 
-	monitor.update(16);
-	EXPECT_EQ(actuator->getCallCounter(), 1);
+TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerMonitorLessThanThreshold) {
+	ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::LessThan, this);
 
-	monitor.update(17);
-	EXPECT_EQ(actuator->getCallCounter(), 1);
+	updateAndExpectCallCount(monitor, 16, 0);
+	updateAndExpectCallCount(monitor, 15, 0);
+	updateAndExpectCallCount(monitor, 14, 1);
+}
+
+TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerMonitorLessOrEqualThanThreshold) {
+	ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::LessOrEqualThan, this);
+
+	updateAndExpectCallCount(monitor, 16, 0);
+	updateAndExpectCallCount(monitor, 15, 1);
+	updateAndExpectCallCount(monitor, 14, 2);
 }

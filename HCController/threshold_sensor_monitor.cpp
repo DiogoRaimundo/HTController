@@ -35,7 +35,7 @@ void ThresholdSensorMonitor::update(int value) {
 	}
 
 	if (isTriggeringValue(value)) {
-		this->triggerActuator->triggerActuator();
 		this->hasBeenTriggered = true;
+		this->triggerActuator->triggerActuator();
 	}
 }
