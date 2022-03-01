@@ -31,11 +31,11 @@
 *.out
 *.app
 
-# Include Packages folder
-!packages/**
-
 # Build results
 x64/
 
 # Visual Studio cache/options directory
 .vs/
+
+# Include Packages folder
+!packages/**
