@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HCController", "HCController\HCController.vcxproj", "{26FE97B2-5A02-4CA1-B1C8-F651C822B1D9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HCController.Test", "HCController.Test\HCController.Test.vcxproj", "{54BD5807-7CF5-40E9-A553-9C2FEC7D8CEA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{26FE97B2-5A02-4CA1-B1C8-F651C822B1D9} = {26FE97B2-5A02-4CA1-B1C8-F651C822B1D9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
