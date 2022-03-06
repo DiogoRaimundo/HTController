@@ -26,16 +26,30 @@ bool ThresholdSensorMonitor::isTriggeringValue(int value) {
 	case MonitorThresholdType::LessOrEqualThan:
 		return value <= this->thresholdValue;
 	}
+
+	return false;
 }
 
-void ThresholdSensorMonitor::update(int value) {
-	if (this->triggerType == MonitorTriggerType::TriggerOnlyOnce &&
-		this->hasBeenTriggered) {
-		return;
-	}
+void ThresholdSensorMonitor::fireTrigger() {
+	this->hasBeenTriggered = true;
+	this->triggerActuator->triggerActuator();
+}
 
-	if (isTriggeringValue(value)) {
-		this->hasBeenTriggered = true;
-		this->triggerActuator->triggerActuator();
+void ThresholdSensorMonitor::resetTrigger() {
+	this->hasBeenTriggered = false;
+}
+
+void ThresholdSensorMonitor::update() {
+	int sensorValue = triggerSensor->readValue();
+
+	if (isTriggeringValue(sensorValue)) {
+		if (this->hasBeenTriggered && this->triggerType == MonitorTriggerType::TriggerOnlyOnce) {
+			return;
+		}
+
+		this->fireTrigger();
+	}
+	else {
+		this->resetTrigger();
 	}
 }

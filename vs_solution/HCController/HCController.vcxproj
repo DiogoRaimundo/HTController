@@ -153,6 +153,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="base_monitor_actuator.h" />
+    <ClInclude Include="base_monitor_sensor.h" />
     <ClInclude Include="monitor_trigger_type.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="monitor_threshold_type.h" />
