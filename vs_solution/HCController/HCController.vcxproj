@@ -154,12 +154,14 @@
   <ItemGroup>
     <ClInclude Include="base_monitor_actuator.h" />
     <ClInclude Include="base_monitor_sensor.h" />
+    <ClInclude Include="curve_sensor_monitor.h" />
     <ClInclude Include="monitor_trigger_type.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="monitor_threshold_type.h" />
     <ClInclude Include="threshold_sensor_monitor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="curve_sensor_monitor.cpp" />
     <ClCompile Include="HCController.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
