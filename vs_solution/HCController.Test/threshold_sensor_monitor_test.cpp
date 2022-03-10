@@ -3,42 +3,11 @@
 
 #include "pch.h"
 
-#include "base_monitor_sensor.h"
-#include "base_monitor_actuator.h"
+#include "threshold_sensor_monitor_test_fixture.h"
+
 #include "threshold_sensor_monitor.h"
 #include "monitor_threshold_type.h"
 #include "monitor_trigger_type.h"
-
-class ThresholdSensorMonitorTestFixture : public ::testing::Test, public BaseMonitorSensor, public BaseMonitorActuator {
-private:
-	int sensorValue = 0;
-	int callbackCallCounter = 0;
-
-protected:
-	virtual int readValue() override {
-		return sensorValue;
-	}
-
-	void setSensorValue(int value) {
-		sensorValue = value;
-	}
-
-	virtual void triggerActuator() override {
-		callbackCallCounter++;
-	}
-
-	int getCallCounter() {
-		return callbackCallCounter;
-	}
-
-	void updateAndExpectCallCount(ThresholdSensorMonitor* monitor, int sensorValue, int expectedCallCount) {
-		setSensorValue(sensorValue);
-
-		monitor->update();
-
-		EXPECT_EQ(getCallCounter(), expectedCallCount);
-	}
-};
 
 TEST_F(ThresholdSensorMonitorTestFixture, TestInitialization) {
 	ThresholdSensorMonitor monitor(15, MonitorThresholdType::GreaterThan, this, this);

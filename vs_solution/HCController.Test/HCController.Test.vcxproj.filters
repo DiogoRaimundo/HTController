@@ -18,6 +18,15 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="base_sensor_monitor_test_fixture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="threshold_sensor_monitor_test_fixture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="curve_sensor_monitor_test_fixture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -27,6 +36,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="curve_sensor_monitor_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base_sensor_monitor_test_fixture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="threshold_sensor_monitor_test_fixture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="curve_sensor_monitor_test_fixture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

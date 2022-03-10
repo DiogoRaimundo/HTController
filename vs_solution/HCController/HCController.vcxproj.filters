@@ -36,6 +36,9 @@
     <ClInclude Include="curve_sensor_monitor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="base_monitor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HCController.cpp">
@@ -48,6 +51,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="curve_sensor_monitor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base_monitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
