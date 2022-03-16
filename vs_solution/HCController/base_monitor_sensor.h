@@ -1,7 +1,6 @@
 #pragma once
 
-class BaseMonitorSensor
-{
+class BaseMonitorSensor {
 public:
 	virtual int readValue() = 0;
 };

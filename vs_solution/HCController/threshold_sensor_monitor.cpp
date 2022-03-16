@@ -3,6 +3,16 @@
 #include "monitor_threshold_type.h"
 #include "monitor_trigger_type.h"
 
+ThresholdSensorMonitor::ThresholdSensorMonitor(int thresholdValue, MonitorThresholdType thresholdType, MonitorTriggerType triggerType, BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
+	BaseMonitor(triggerSensor, triggerActuator)
+{
+	this->thresholdValue = thresholdValue;
+	this->thresholdType = thresholdType;
+
+	this->triggerType = triggerType;
+	this->hasBeenTriggered = false;
+}
+
 int ThresholdSensorMonitor::getThresholdValue() {
 	return this->thresholdValue;
 }
@@ -30,9 +40,9 @@ bool ThresholdSensorMonitor::isTriggeringValue(int value) {
 	return false;
 }
 
-void ThresholdSensorMonitor::fireTrigger() {
+void ThresholdSensorMonitor::fireTrigger(int triggerValue) {
 	this->hasBeenTriggered = true;
-	this->triggerActuator->triggerActuator();
+	this->triggerActuator->triggerActuator(triggerValue);
 }
 
 void ThresholdSensorMonitor::resetTrigger() {
@@ -47,7 +57,7 @@ void ThresholdSensorMonitor::update() {
 			return;
 		}
 
-		this->fireTrigger();
+		this->fireTrigger(sensorValue);
 	}
 	else {
 		this->resetTrigger();

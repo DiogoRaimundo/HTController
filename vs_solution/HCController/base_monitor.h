@@ -4,8 +4,7 @@
 #include "base_monitor_sensor.h"
 #include "base_monitor_actuator.h"
 
-class BaseMonitor
-{
+class BaseMonitor {
 protected:
 	BaseMonitorSensor* triggerSensor;
 	BaseMonitorActuator* triggerActuator;

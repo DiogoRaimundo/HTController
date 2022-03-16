@@ -2,5 +2,5 @@
 
 class BaseMonitorActuator {
 public:
-	virtual void triggerActuator() = 0;
+	virtual void triggerActuator(int triggerValue) = 0;
 };

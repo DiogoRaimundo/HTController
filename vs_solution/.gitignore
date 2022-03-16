@@ -34,6 +34,9 @@
 # Build results
 x64/
 
+# Test results
+TestResults/
+
 # Visual Studio cache/options directory
 .vs/
 

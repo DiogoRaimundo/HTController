@@ -2,7 +2,9 @@
 
 #include "threshold_sensor_monitor_test_fixture.h"
 
-void ThresholdSensorMonitorTestFixture::triggerActuator() {
+using namespace HCControllerTests;
+
+void ThresholdSensorMonitorTestFixture::triggerActuator(int triggerValue) {
 	callbackCallCounter++;
 }
 

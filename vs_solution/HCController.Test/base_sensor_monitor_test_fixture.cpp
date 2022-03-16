@@ -8,6 +8,8 @@
 #include "base_monitor_sensor.h"
 #include "base_monitor_actuator.h"
 
+using namespace HCControllerTests;
+
 void BaseSensorMonitorTestFixture::updateValue(BaseMonitor* monitor, int sensorValue) {
 	setSensorValue(sensorValue);
 

@@ -16,22 +16,14 @@ private:
 	bool hasBeenTriggered;
 
 	bool isTriggeringValue(int value);
-	void fireTrigger();
+	void fireTrigger(int triggerValue);
 	void resetTrigger();
 
 public:
 	ThresholdSensorMonitor(int thresholdValue, MonitorThresholdType thresholdType, BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
 		ThresholdSensorMonitor(thresholdValue, thresholdType, MonitorTriggerType::TriggerAllways, triggerSensor, triggerActuator) {}
 
-	ThresholdSensorMonitor(int thresholdValue, MonitorThresholdType thresholdType, MonitorTriggerType triggerType, BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
-		BaseMonitor(triggerSensor, triggerActuator)
-	{
-		this->thresholdValue = thresholdValue;
-		this->thresholdType = thresholdType;
-
-		this->triggerType = triggerType;
-		this->hasBeenTriggered = false;
-	}
+	ThresholdSensorMonitor(int thresholdValue, MonitorThresholdType thresholdType, MonitorTriggerType triggerType, BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator);
 
 	int getThresholdValue();
 	void setThresholdValue(int value);

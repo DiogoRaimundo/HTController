@@ -6,13 +6,15 @@
 #include "base_monitor_sensor.h"
 #include "base_monitor_actuator.h"
 
-class BaseSensorMonitorTestFixture : public ::testing::Test, public BaseMonitorSensor, public BaseMonitorActuator {
-protected:
-	int sensorValue = 0;
+namespace HCControllerTests {
+	class BaseSensorMonitorTestFixture : public ::testing::Test, public BaseMonitorSensor, public BaseMonitorActuator {
+	protected:
+		int sensorValue = 0;
 
-	void updateValue(BaseMonitor* monitor, int sensorValue);
+		void updateValue(BaseMonitor* monitor, int sensorValue);
 
-public:
-	virtual int readValue() override;
-	void setSensorValue(int value);
-};
+	public:
+		virtual int readValue() override;
+		void setSensorValue(int value);
+	};
+}
