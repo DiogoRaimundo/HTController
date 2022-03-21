@@ -11,7 +11,9 @@ namespace HCControllerTests {
 	protected:
 		int sensorValue = 0;
 
-		void updateValue(BaseMonitor* monitor, int sensorValue);
+		virtual BaseMonitor* getMonitorInstance() = 0;
+
+		void updateValue(int sensorValue);
 
 	public:
 		virtual int readValue() override;

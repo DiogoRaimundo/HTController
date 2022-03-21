@@ -7,7 +7,7 @@
 
 #define CURVE_LENGTH 1024
 
-class CurveSensorMonitor : BaseMonitor {
+class CurveSensorMonitor : public BaseMonitor {
 private:
 	int pointCount;
 

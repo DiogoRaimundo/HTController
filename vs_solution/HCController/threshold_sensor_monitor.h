@@ -7,7 +7,7 @@
 #include "monitor_threshold_type.h"
 #include "monitor_trigger_type.h"
 
-class ThresholdSensorMonitor : BaseMonitor {
+class ThresholdSensorMonitor : public BaseMonitor {
 private:
 	int thresholdValue;
 	MonitorThresholdType thresholdType;

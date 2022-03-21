@@ -6,13 +6,20 @@
 namespace HCControllerTests {
 	class ThresholdSensorMonitorTestFixture : public BaseSensorMonitorTestFixture {
 	private:
+		ThresholdSensorMonitor* monitor = nullptr;
 		int callbackCallCounter = 0;
 
-	public:
+	protected:
+		void setMonitorInstance(ThresholdSensorMonitor* monitor);
+		virtual BaseMonitor* getMonitorInstance() override;
+
 		virtual void triggerActuator(int triggerValue) override;
 
 		int getCallCounter();
 
-		void updateAndExpectCallCount(ThresholdSensorMonitor* monitor, int sensorValue, int expectedCallCount);
+		void updateAndExpectCallCount(int sensorValue, int expectedCallCount);
+
+	public:
+		~ThresholdSensorMonitorTestFixture();
 	};
 }

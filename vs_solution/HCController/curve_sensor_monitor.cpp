@@ -48,7 +48,6 @@ int CurveSensorMonitor::getCurveValue(int xValue) {
 	return -1;
 }
 
-
 int CurveSensorMonitor::getPointCount() {
 	return pointCount / 2;
 }

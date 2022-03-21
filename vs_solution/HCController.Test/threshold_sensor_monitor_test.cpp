@@ -26,53 +26,59 @@ namespace HCControllerTests {
 
 	TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerIfGreaterThanThreshold) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterThan, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 14, 0);
-		updateAndExpectCallCount(monitor, 15, 0);
-		updateAndExpectCallCount(monitor, 16, 1);
-		updateAndExpectCallCount(monitor, 17, 2);
+		updateAndExpectCallCount(14, 0);
+		updateAndExpectCallCount(15, 0);
+		updateAndExpectCallCount(16, 1);
+		updateAndExpectCallCount(17, 2);
 	}
 
 	TEST_F(ThresholdSensorMonitorTestFixture, TriggerOnlyOnceIfGreaterThanThreshold) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterThan, MonitorTriggerType::TriggerOnlyOnce, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 14, 0);
-		updateAndExpectCallCount(monitor, 15, 0);
-		updateAndExpectCallCount(monitor, 16, 1);
-		updateAndExpectCallCount(monitor, 17, 1);
+		updateAndExpectCallCount(14, 0);
+		updateAndExpectCallCount(15, 0);
+		updateAndExpectCallCount(16, 1);
+		updateAndExpectCallCount(17, 1);
 	}
 
 	TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerIfGreaterOrEqualThanThreshold) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterOrEqualThan, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 14, 0);
-		updateAndExpectCallCount(monitor, 15, 1);
-		updateAndExpectCallCount(monitor, 16, 2);
+		updateAndExpectCallCount(14, 0);
+		updateAndExpectCallCount(15, 1);
+		updateAndExpectCallCount(16, 2);
 	}
 
 	TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerIfLessThanThreshold) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::LessThan, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 16, 0);
-		updateAndExpectCallCount(monitor, 15, 0);
-		updateAndExpectCallCount(monitor, 14, 1);
+		updateAndExpectCallCount(16, 0);
+		updateAndExpectCallCount(15, 0);
+		updateAndExpectCallCount(14, 1);
 	}
 
 	TEST_F(ThresholdSensorMonitorTestFixture, AllwaysTriggerIfrLessOrEqualThanThreshold) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::LessOrEqualThan, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 16, 0);
-		updateAndExpectCallCount(monitor, 15, 1);
-		updateAndExpectCallCount(monitor, 14, 2);
+		updateAndExpectCallCount(16, 0);
+		updateAndExpectCallCount(15, 1);
+		updateAndExpectCallCount(14, 2);
 	}
 
 	TEST_F(ThresholdSensorMonitorTestFixture, TriggerOnlyOnceIfGreaterThanThresholdAndResetsIfNot) {
 		ThresholdSensorMonitor* monitor = new ThresholdSensorMonitor(15, MonitorThresholdType::GreaterThan, MonitorTriggerType::TriggerOnlyOnce, this, this);
+		setMonitorInstance(monitor);
 
-		updateAndExpectCallCount(monitor, 14, 0);
-		updateAndExpectCallCount(monitor, 15, 0);
-		updateAndExpectCallCount(monitor, 16, 1);
-		updateAndExpectCallCount(monitor, 15, 1);
-		updateAndExpectCallCount(monitor, 16, 2);
+		updateAndExpectCallCount(14, 0);
+		updateAndExpectCallCount(15, 0);
+		updateAndExpectCallCount(16, 1);
+		updateAndExpectCallCount(15, 1);
+		updateAndExpectCallCount(16, 2);
 	}
 }
