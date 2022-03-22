@@ -4,29 +4,35 @@
 
 using namespace HCControllerTests;
 
-ThresholdSensorMonitorTestFixture::~ThresholdSensorMonitorTestFixture() {
+ThresholdSensorMonitorTestFixture::~ThresholdSensorMonitorTestFixture()
+{
 	if (monitor != nullptr) {
 		delete monitor;
 	}
 }
 
-void ThresholdSensorMonitorTestFixture::setMonitorInstance(ThresholdSensorMonitor* monitor) {
+void ThresholdSensorMonitorTestFixture::setMonitorInstance(ThresholdSensorMonitor* monitor)
+{
 	this->monitor = monitor;
 }
 
-BaseMonitor* ThresholdSensorMonitorTestFixture::getMonitorInstance() {
+BaseMonitor* ThresholdSensorMonitorTestFixture::getMonitorInstance()
+{
 	return monitor;
 }
 
-void ThresholdSensorMonitorTestFixture::triggerActuator(int triggerValue) {
+void ThresholdSensorMonitorTestFixture::triggerActuator(int triggerValue)
+{
 	callbackCallCounter++;
 }
 
-int ThresholdSensorMonitorTestFixture::getCallCounter() {
+int ThresholdSensorMonitorTestFixture::getCallCounter()
+{
 	return callbackCallCounter;
 }
 
-void ThresholdSensorMonitorTestFixture::updateAndExpectCallCount(int sensorValue, int expectedCallCount) {
+void ThresholdSensorMonitorTestFixture::updateAndExpectCallCount(int sensorValue, int expectedCallCount)
+{
 	setSensorValue(sensorValue);
 
 	monitor->update();

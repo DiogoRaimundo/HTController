@@ -1,4 +1,5 @@
 #include "pch.h"
+
 #include "curve_sensor_monitor.h"
 
 CurveSensorMonitor::CurveSensorMonitor(BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
@@ -8,21 +9,24 @@ CurveSensorMonitor::CurveSensorMonitor(BaseMonitorSensor* triggerSensor, BaseMon
 	pointValues = nullptr;
 }
 
-CurveSensorMonitor::~CurveSensorMonitor() {
+CurveSensorMonitor::~CurveSensorMonitor()
+{
 	if (pointCount > 0) {
 		delete[] pointValues;
 	}
 }
 
-void CurveSensorMonitor::update() {
+void CurveSensorMonitor::update()
+{
 	int sensorValue = triggerSensor->readValue();
 
 	if (sensorValue >= 0 && sensorValue < CURVE_LENGTH) {
-		triggerActuator->triggerActuator(pointValues[sensorValue]);
+		triggerActuator->triggerActuator(getCurveValue(sensorValue));
 	}
 }
 
-void CurveSensorMonitor::addPoint(int xValue, int yValue) {
+void CurveSensorMonitor::addPoint(int xValue, int yValue)
+{
 	for (int i = 0; i < pointCount; i += 2)
 	{
 		if (pointValues[i] == xValue) {
@@ -34,25 +38,43 @@ void CurveSensorMonitor::addPoint(int xValue, int yValue) {
 	resizeArrayAndAddPoint(xValue, yValue);
 }
 
-int CurveSensorMonitor::getCurveValue(int xValue) {
-	int currPoint;
+int CurveSensorMonitor::getCurveValue(int xValue)
+{
+	int closestMinXValue = -1;
+	int closestMinYValue = -1;
+	int closestMaxXValue = -1;
+	int closestMaxYValue = -1;
+
+	int currXValue;
+	int currYValue;
 	for (int i = 0; i < pointCount; i += 2)
 	{
-		currPoint = pointValues[i];
+		currXValue = pointValues[i];
+		currYValue = pointValues[i + 1];
 
-		if (currPoint == xValue) {
-			return pointValues[i + 1];
+		if (currXValue == xValue) {
+			return currYValue;
+		}
+		else if (currXValue < xValue) {
+			closestMinXValue = currXValue;
+			closestMinYValue = currYValue;
+		}
+		else {
+			closestMaxXValue = currXValue;
+			closestMaxYValue = currYValue;
 		}
 	}
 
-	return -1;
+	return getInterpoletedValue(xValue, closestMinXValue, closestMinYValue, closestMaxXValue, closestMaxYValue);
 }
 
-int CurveSensorMonitor::getPointCount() {
+int CurveSensorMonitor::getPointCount()
+{
 	return pointCount / 2;
 }
 
-void CurveSensorMonitor::resizeArrayAndAddPoint(int xValue, int yValue) {
+void CurveSensorMonitor::resizeArrayAndAddPoint(int xValue, int yValue)
+{
 	int newPointCount = pointCount + 2;
 	int* newArray = new int[newPointCount];
 
@@ -102,4 +124,27 @@ void CurveSensorMonitor::resizeArrayAndAddPoint(int xValue, int yValue) {
 	delete[] pointValues;
 	pointCount = newPointCount;
 	pointValues = newArray;
+}
+
+int CurveSensorMonitor::getInterpoletedValue(int xValue,
+	int closestMinXValue, int closestMinYValue, int closestMaxXValue, int closestMaxYValue)
+{
+	int minYValueContribution = closestMinYValue * (closestMaxXValue - xValue);
+	int maxYValueContribution = closestMaxYValue * (xValue - closestMinXValue);
+	int yValueContributions = minYValueContribution + maxYValueContribution;
+
+	int closestXValuesDistance = closestMaxXValue - closestMinXValue;
+
+	int yValue = yValueContributions / closestXValuesDistance;
+
+	int contributionRemaining = yValueContributions % closestXValuesDistance;
+	if (contributionRemaining < 0) {
+		contributionRemaining *= -1;
+	}
+
+	if (contributionRemaining >= closestXValuesDistance / 2.0) {
+		yValue += yValue > 0 ? 1 : -1;
+	}
+
+	return yValue;
 }

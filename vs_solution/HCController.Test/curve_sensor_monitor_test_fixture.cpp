@@ -4,29 +4,35 @@
 
 using namespace HCControllerTests;
 
-CurveSensorMonitorTestFixture::~CurveSensorMonitorTestFixture() {
+CurveSensorMonitorTestFixture::~CurveSensorMonitorTestFixture()
+{
 	if (monitor != nullptr) {
 		delete monitor;
 	}
 }
 
-void CurveSensorMonitorTestFixture::setMonitorInstance(CurveSensorMonitor* monitor) {
+void CurveSensorMonitorTestFixture::setMonitorInstance(CurveSensorMonitor* monitor)
+{
 	this->monitor = monitor;
 }
 
-BaseMonitor* CurveSensorMonitorTestFixture::getMonitorInstance() {
+BaseMonitor* CurveSensorMonitorTestFixture::getMonitorInstance()
+{
 	return monitor;
 }
 
-void CurveSensorMonitorTestFixture::triggerActuator(int triggerValue) {
+void CurveSensorMonitorTestFixture::triggerActuator(int triggerValue)
+{
 	outputValue = triggerValue;
 }
 
-int CurveSensorMonitorTestFixture::getOutputValue() {
+int CurveSensorMonitorTestFixture::getOutputValue()
+{
 	return outputValue;
 }
 
-void CurveSensorMonitorTestFixture::updateAndExpectOutputValue(int sensorValue, int expectedOutputValue) {
+void CurveSensorMonitorTestFixture::updateAndExpectOutputValue(int sensorValue, int expectedOutputValue)
+{
 	setSensorValue(sensorValue);
 
 	monitor->update();
@@ -34,10 +40,12 @@ void CurveSensorMonitorTestFixture::updateAndExpectOutputValue(int sensorValue, 
 	EXPECT_EQ(getOutputValue(), expectedOutputValue);
 }
 
-void CurveSensorMonitorTestFixture::assertPointCount(int expectedPointCount) {
+void CurveSensorMonitorTestFixture::assertPointCount(int expectedPointCount)
+{
 	EXPECT_EQ(monitor->getPointCount(), expectedPointCount);
 }
 
-void CurveSensorMonitorTestFixture::assertPointValue(int pointXValue, int expectedPointYValue) {
-
+void CurveSensorMonitorTestFixture::assertPointValue(int pointXValue, int expectedPointYValue)
+{
+	EXPECT_EQ(monitor->getCurveValue(0), 50);
 }

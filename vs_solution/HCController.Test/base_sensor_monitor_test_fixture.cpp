@@ -10,17 +10,20 @@
 
 using namespace HCControllerTests;
 
-void BaseSensorMonitorTestFixture::updateValue(int sensorValue) {
+void BaseSensorMonitorTestFixture::updateValue(int sensorValue)
+{
 	setSensorValue(sensorValue);
 
 	BaseMonitor* monitor = getMonitorInstance();
 	monitor->update();
 }
 
-int BaseSensorMonitorTestFixture::readValue() {
+int BaseSensorMonitorTestFixture::readValue()
+{
 	return sensorValue;
 }
 
-void BaseSensorMonitorTestFixture::setSensorValue(int value) {
+void BaseSensorMonitorTestFixture::setSensorValue(int value)
+{
 	sensorValue = value;
 }
