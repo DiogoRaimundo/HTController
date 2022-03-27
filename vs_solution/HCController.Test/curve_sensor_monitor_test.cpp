@@ -24,7 +24,6 @@ namespace HCControllerTests {
 
 		assertPointCount(1);
 		assertPointValue(0, 50);
-		assertPointValue(100, -1);
 	}
 
 	TEST_F(CurveSensorMonitorTestFixture, SetTwoPoints)
@@ -143,8 +142,6 @@ namespace HCControllerTests {
 		monitor->addPoint(100, 200);
 
 		updateAndExpectOutputValue(0, -1);
-
-		throw "This is not thowing an error but it should"
 	}
 
 	TEST_F(CurveSensorMonitorTestFixture, GetPointHigherThanMaxXValue)
@@ -153,8 +150,8 @@ namespace HCControllerTests {
 		setMonitorInstance(monitor);
 
 		monitor->addPoint(0, 50);
-		monitor->addPoint(100, 200);
+		monitor->addPoint(50, 100);
 
-		updateAndExpectOutputValue(150, -1);
+		updateAndExpectOutputValue(100, -1);
 	}
 }

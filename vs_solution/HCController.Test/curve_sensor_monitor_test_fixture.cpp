@@ -47,5 +47,5 @@ void CurveSensorMonitorTestFixture::assertPointCount(int expectedPointCount)
 
 void CurveSensorMonitorTestFixture::assertPointValue(int pointXValue, int expectedPointYValue)
 {
-	EXPECT_EQ(monitor->getCurveValue(0), 50);
+	EXPECT_EQ(monitor->getCurveValue(pointXValue), expectedPointYValue);
 }

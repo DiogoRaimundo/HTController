@@ -14,6 +14,8 @@ private:
 	void resizeArrayAndAddPoint(int xValue, int yValue);
 	int getInterpoletedValue(int xValue,
 		int closestMinXValue, int closestMinYValue, int closestMaxXValue, int closestMaxYValue);
+	int getExtrapoletedValue(int xValue,
+		int closestMinXValue, int closestMinYValue, int closestMaxXValue, int closestMaxYValue);
 
 public:
 	CurveSensorMonitor(BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator);

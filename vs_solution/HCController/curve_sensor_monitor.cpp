@@ -65,6 +65,11 @@ int CurveSensorMonitor::getCurveValue(int xValue)
 		}
 	}
 
+	if (closestMinXValue == -1 || closestMinYValue == -1 ||
+		closestMaxXValue == -1 || closestMaxYValue == -1) {
+		return getExtrapoletedValue(xValue, closestMinXValue, closestMinYValue, closestMaxXValue, closestMaxYValue);
+	}
+
 	return getInterpoletedValue(xValue, closestMinXValue, closestMinYValue, closestMaxXValue, closestMaxYValue);
 }
 
@@ -147,4 +152,10 @@ int CurveSensorMonitor::getInterpoletedValue(int xValue,
 	}
 
 	return yValue;
+}
+
+int CurveSensorMonitor::getExtrapoletedValue(int xValue,
+	int closestMinXValue, int closestMinYValue, int closestMaxXValue, int closestMaxYValue)
+{
+	return -1;
 }
