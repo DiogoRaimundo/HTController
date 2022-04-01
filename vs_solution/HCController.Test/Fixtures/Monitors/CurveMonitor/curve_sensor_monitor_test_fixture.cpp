@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "../../../pch.h"
 
 #include "curve_sensor_monitor_test_fixture.h"
 

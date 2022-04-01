@@ -1,5 +1,3 @@
-#include "pch.h"
-
 #include "curve_sensor_monitor.h"
 
 CurveSensorMonitor::CurveSensorMonitor(BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :

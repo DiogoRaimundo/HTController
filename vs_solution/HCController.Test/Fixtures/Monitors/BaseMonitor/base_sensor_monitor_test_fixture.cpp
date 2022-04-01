@@ -1,12 +1,10 @@
-#include "gtest/gtest.h"
-
-#include "pch.h"
+#include "../../../pch.h"
 
 #include "base_sensor_monitor_test_fixture.h"
 
-#include "base_monitor.h"
-#include "base_monitor_sensor.h"
-#include "base_monitor_actuator.h"
+#include "Monitors/BaseMonitor/base_monitor.h"
+#include "Monitors/BaseMonitor/base_monitor_sensor.h"
+#include "Monitors/BaseMonitor/base_monitor_actuator.h"
 
 using namespace HCControllerTests;
 

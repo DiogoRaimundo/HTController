@@ -1,9 +1,6 @@
 #pragma once
 
-#define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
-
-#include "pch.h"
-#include "base_monitor.h"
+#include "../BaseMonitor/base_monitor.h"
 
 #define CURVE_LENGTH 1024
 

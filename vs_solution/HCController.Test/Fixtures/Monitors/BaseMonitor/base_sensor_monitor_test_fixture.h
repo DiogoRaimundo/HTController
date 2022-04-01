@@ -1,10 +1,8 @@
 #pragma once
 
-#include "pch.h"
-
-#include "base_monitor.h"
-#include "base_monitor_sensor.h"
-#include "base_monitor_actuator.h"
+#include "Monitors/BaseMonitor/base_monitor.h"
+#include "Monitors/BaseMonitor/base_monitor_sensor.h"
+#include "Monitors/BaseMonitor/base_monitor_actuator.h"
 
 namespace HCControllerTests {
 	class BaseSensorMonitorTestFixture : public ::testing::Test, public BaseMonitorSensor, public BaseMonitorActuator {

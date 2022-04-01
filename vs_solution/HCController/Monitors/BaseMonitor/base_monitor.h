@@ -1,6 +1,5 @@
 #pragma once
 
-#include "pch.h"
 #include "base_monitor_sensor.h"
 #include "base_monitor_actuator.h"
 

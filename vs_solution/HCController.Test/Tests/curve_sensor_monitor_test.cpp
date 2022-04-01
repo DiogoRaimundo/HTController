@@ -1,11 +1,8 @@
-#include <iostream>
-#include "gtest/gtest.h"
+#include "../pch.h"
 
-#include "pch.h"
+#include "../Fixtures/Monitors/CurveMonitor/curve_sensor_monitor_test_fixture.h"
 
-#include "curve_sensor_monitor_test_fixture.h"
-
-#include "curve_sensor_monitor.h"
+#include "Monitors/CurveMonitor/curve_sensor_monitor.h"
 
 namespace HCControllerTests {
 	/*TEST_F(CurveSensorMonitorTestFixture, TestInitialization)

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "base_monitor.h"
 
 BaseMonitor::BaseMonitor(BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) {

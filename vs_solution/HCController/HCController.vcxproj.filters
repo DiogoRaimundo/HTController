@@ -13,48 +13,90 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{35700459-6ee5-4e55-8b2e-d384d2133bb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\MenuScreen">
+      <UniqueIdentifier>{61564f74-c185-46e1-bcec-5d30587b0d83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\MenuScreen\Header Files">
+      <UniqueIdentifier>{d1e0e971-d58c-4bbb-a17a-fc17c69cb3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\MenuScreen\Source Files">
+      <UniqueIdentifier>{fe3856ea-1988-491a-90d7-3968530e4096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors">
+      <UniqueIdentifier>{6568cabd-7c7c-415c-b166-a14ab3333d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\BaseMonitor">
+      <UniqueIdentifier>{839a187f-fddb-4461-9326-105355e19b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\BaseMonitor\Header Files">
+      <UniqueIdentifier>{e88514ef-e213-4569-aa6b-4d1c44d1261d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\BaseMonitor\Source Files">
+      <UniqueIdentifier>{fe5e2555-9c1c-49da-8710-50c87f060d0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\ThresholdMonitor">
+      <UniqueIdentifier>{2faecb7e-1e0b-4abc-a081-265f61721ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\ThresholdMonitor\Header Files">
+      <UniqueIdentifier>{59a398b0-cbdd-47a0-a64b-644b407afd2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\ThresholdMonitor\Source Files">
+      <UniqueIdentifier>{48c7ec91-f070-4a77-802e-b4bf020c060d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\CurveMonitor">
+      <UniqueIdentifier>{89af1861-e102-421a-ad5c-1e2937dbddc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\CurveMonitor\Header Files">
+      <UniqueIdentifier>{5f092ef5-6997-41e0-9d43-6313ed1995d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Monitors\CurveMonitor\Source Files">
+      <UniqueIdentifier>{56d4793d-8a09-4dba-a7e3-33309cf6ff3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Screens\MenuScreen\menu_state_machine.h">
+      <Filter>Screens\MenuScreen\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="threshold_sensor_monitor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\BaseMonitor\base_monitor.h">
+      <Filter>Monitors\BaseMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="monitor_threshold_type.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\BaseMonitor\base_monitor_actuator.h">
+      <Filter>Monitors\BaseMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="base_monitor_actuator.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\BaseMonitor\base_monitor_sensor.h">
+      <Filter>Monitors\BaseMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="monitor_trigger_type.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\ThresholdMonitor\monitor_threshold_type.h">
+      <Filter>Monitors\ThresholdMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="base_monitor_sensor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\ThresholdMonitor\monitor_trigger_type.h">
+      <Filter>Monitors\ThresholdMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="curve_sensor_monitor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\ThresholdMonitor\threshold_sensor_monitor.h">
+      <Filter>Monitors\ThresholdMonitor\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="base_monitor.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Monitors\CurveMonitor\curve_sensor_monitor.h">
+      <Filter>Monitors\CurveMonitor\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HCController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Screens\MenuScreen\menu_state_machine.cpp">
+      <Filter>Screens\MenuScreen\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="threshold_sensor_monitor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Monitors\BaseMonitor\base_monitor.cpp">
+      <Filter>Monitors\BaseMonitor\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="curve_sensor_monitor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Monitors\ThresholdMonitor\threshold_sensor_monitor.cpp">
+      <Filter>Monitors\ThresholdMonitor\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="base_monitor.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Monitors\CurveMonitor\curve_sensor_monitor.cpp">
+      <Filter>Monitors\CurveMonitor\Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

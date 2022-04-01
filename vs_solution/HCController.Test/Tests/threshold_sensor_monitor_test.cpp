@@ -1,13 +1,10 @@
-#include <iostream>
-#include "gtest/gtest.h"
+#include "../pch.h"
 
-#include "pch.h"
+#include "../Fixtures/Monitors/ThresholdMonitor/threshold_sensor_monitor_test_fixture.h"
 
-#include "threshold_sensor_monitor_test_fixture.h"
-
-#include "threshold_sensor_monitor.h"
-#include "monitor_threshold_type.h"
-#include "monitor_trigger_type.h"
+#include "Monitors/ThresholdMonitor/threshold_sensor_monitor.h"
+#include "Monitors/ThresholdMonitor/monitor_threshold_type.h"
+#include "Monitors/ThresholdMonitor/monitor_trigger_type.h"
 
 namespace HCControllerTests {
 	TEST_F(ThresholdSensorMonitorTestFixture, TestInitialization)

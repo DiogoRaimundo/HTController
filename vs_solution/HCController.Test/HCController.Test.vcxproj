@@ -33,23 +33,23 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClInclude Include="base_sensor_monitor_test_fixture.h" />
-    <ClInclude Include="curve_sensor_monitor_test_fixture.h" />
+    <ClInclude Include="Fixtures\Monitors\BaseMonitor\base_sensor_monitor_test_fixture.h" />
+    <ClInclude Include="Fixtures\Monitors\CurveMonitor\curve_sensor_monitor_test_fixture.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="threshold_sensor_monitor_test_fixture.h" />
+    <ClInclude Include="Fixtures\Monitors\ThresholdMonitor\threshold_sensor_monitor_test_fixture.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="base_sensor_monitor_test_fixture.cpp" />
-    <ClCompile Include="curve_sensor_monitor_test.cpp" />
-    <ClCompile Include="curve_sensor_monitor_test_fixture.cpp" />
-    <ClCompile Include="threshold_sensor_monitor_test.cpp" />
+    <ClCompile Include="Fixtures\Monitors\BaseMonitor\base_sensor_monitor_test_fixture.cpp" />
+    <ClCompile Include="Tests\curve_sensor_monitor_test.cpp" />
+    <ClCompile Include="Fixtures\Monitors\CurveMonitor\curve_sensor_monitor_test_fixture.cpp" />
+    <ClCompile Include="Tests\threshold_sensor_monitor_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="threshold_sensor_monitor_test_fixture.cpp" />
+    <ClCompile Include="Fixtures\Monitors\ThresholdMonitor\threshold_sensor_monitor_test_fixture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -81,7 +81,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "base_sensor_monitor_test_fixture.h"
-#include "threshold_sensor_monitor.h"
+#include "../../../Fixtures/Monitors/BaseMonitor/base_sensor_monitor_test_fixture.h"
+#include "Monitors/ThresholdMonitor/threshold_sensor_monitor.h"
 
 namespace HCControllerTests {
 	class ThresholdSensorMonitorTestFixture : public BaseSensorMonitorTestFixture {
