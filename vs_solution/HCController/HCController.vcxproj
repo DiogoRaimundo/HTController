@@ -156,7 +156,10 @@
     <ClInclude Include="Monitors\BaseMonitor\base_monitor_actuator.h" />
     <ClInclude Include="Monitors\BaseMonitor\base_monitor_sensor.h" />
     <ClInclude Include="Monitors\CurveMonitor\curve_sensor_monitor.h" />
-    <ClInclude Include="Screens\MenuScreen\menu_state_machine.h" />
+    <ClInclude Include="Screens\screen_state.h" />
+    <ClInclude Include="Screens\MenuScreens\set_ac_on_threshold_screen.h" />
+    <ClInclude Include="UI\ui_action.h" />
+    <ClInclude Include="Screens\screen_state_machine.h" />
     <ClInclude Include="Monitors\ThresholdMonitor\monitor_trigger_type.h" />
     <ClInclude Include="Monitors\ThresholdMonitor\monitor_threshold_type.h" />
     <ClInclude Include="Monitors\ThresholdMonitor\threshold_sensor_monitor.h" />
@@ -167,8 +170,10 @@
     <ClCompile Include="HCController.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Screens\MenuScreen\menu_state_machine.cpp" />
+    <ClCompile Include="Screens\screen_state.cpp" />
+    <ClCompile Include="Screens\screen_state_machine.cpp" />
     <ClCompile Include="Monitors\ThresholdMonitor\threshold_sensor_monitor.cpp" />
+    <ClCompile Include="Screens\MenuScreens\set_ac_on_threshold_screen.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

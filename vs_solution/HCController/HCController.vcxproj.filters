@@ -57,7 +57,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Screens\MenuScreen\menu_state_machine.h">
+    <ClInclude Include="Screens\screen_state_machine.h">
       <Filter>Screens\MenuScreen\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Monitors\BaseMonitor\base_monitor.h">
@@ -81,12 +81,21 @@
     <ClInclude Include="Monitors\CurveMonitor\curve_sensor_monitor.h">
       <Filter>Monitors\CurveMonitor\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UI\ui_action.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\screen_state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Screens\MenuScreens\set_ac_on_threshold_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HCController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Screens\MenuScreen\menu_state_machine.cpp">
+    <ClCompile Include="Screens\screen_state_machine.cpp">
       <Filter>Screens\MenuScreen\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Monitors\BaseMonitor\base_monitor.cpp">
@@ -97,6 +106,12 @@
     </ClCompile>
     <ClCompile Include="Monitors\CurveMonitor\curve_sensor_monitor.cpp">
       <Filter>Monitors\CurveMonitor\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\screen_state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Screens\MenuScreens\set_ac_on_threshold_screen.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

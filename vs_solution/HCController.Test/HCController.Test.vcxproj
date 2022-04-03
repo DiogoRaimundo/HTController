@@ -42,6 +42,7 @@
     <ClCompile Include="Fixtures\Monitors\BaseMonitor\base_sensor_monitor_test_fixture.cpp" />
     <ClCompile Include="Tests\curve_sensor_monitor_test.cpp" />
     <ClCompile Include="Fixtures\Monitors\CurveMonitor\curve_sensor_monitor_test_fixture.cpp" />
+    <ClCompile Include="Tests\screen_test.cpp" />
     <ClCompile Include="Tests\threshold_sensor_monitor_test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
