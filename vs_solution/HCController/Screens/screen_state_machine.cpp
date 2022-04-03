@@ -4,6 +4,6 @@ ScreenStateMachine::ScreenStateMachine() {
 
 }
 
-std::string ScreenStateMachine::getCurrStateName() {
+const char* ScreenStateMachine::getCurrStateName() {
 	return currState->getName();
 }

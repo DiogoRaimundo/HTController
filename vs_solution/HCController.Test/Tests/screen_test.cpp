@@ -8,6 +8,8 @@ namespace HCControllerTests {
 	{
 		ScreenState* stateMachine = new SetAcOnThresholdScreen();
 
-		EXPECT_EQ(stateMachine->getName(), "SetAcOnThreshold");
+		std::string stateName = stateMachine->getName();
+
+		EXPECT_EQ(stateName, "SetAcOnThreshold");
 	}
 }

@@ -5,7 +5,7 @@ SetAcOnThresholdScreen::SetAcOnThresholdScreen()
 
 }
 
-std::string SetAcOnThresholdScreen::getName()
+const char* SetAcOnThresholdScreen::getName()
 {
 	return "SetAcOnThreshold";
 }

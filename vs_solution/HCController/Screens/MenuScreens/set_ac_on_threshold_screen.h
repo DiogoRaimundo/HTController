@@ -7,6 +7,6 @@ class SetAcOnThresholdScreen :public ScreenState
 public:
 	SetAcOnThresholdScreen();
 
-	virtual std::string getName() override;
+	virtual const char* getName() override;
 };
 

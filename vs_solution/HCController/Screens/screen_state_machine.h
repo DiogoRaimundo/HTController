@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 #include "screen_state.h"
 #include "../UI/ui_action.h"
 
@@ -14,6 +12,6 @@ public:
 	ScreenStateMachine();
 
 	void triggerAction(UiAction action);
-	std::string getCurrStateName();
+	const char* getCurrStateName();
 };
 
