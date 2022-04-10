@@ -32,10 +32,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tests\threshold_sensor_monitor_test.cpp">
+    <ClCompile Include="Tests\Monitors\threshold_sensor_monitor_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tests\curve_sensor_monitor_test.cpp">
+    <ClCompile Include="Tests\Monitors\curve_sensor_monitor_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Fixtures\Monitors\BaseMonitor\base_sensor_monitor_test_fixture.cpp">
@@ -47,7 +47,7 @@
     <ClCompile Include="Fixtures\Monitors\CurveMonitor\curve_sensor_monitor_test_fixture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tests\screen_test.cpp">
+    <ClCompile Include="Tests\UI\set_ac_on_threshold_screen_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

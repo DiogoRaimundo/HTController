@@ -57,9 +57,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Screens\screen_state_machine.h">
-      <Filter>Screens\MenuScreen\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Monitors\BaseMonitor\base_monitor.h">
       <Filter>Monitors\BaseMonitor\Header Files</Filter>
     </ClInclude>
@@ -84,19 +81,25 @@
     <ClInclude Include="UI\ui_action.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Screens\screen_state.h">
+    <ClInclude Include="UI\Screens\screen_state.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Screens\MenuScreens\set_ac_on_threshold_screen.h">
+    <ClInclude Include="UI\Screens\MenuScreens\SetAcOnThresholdScreen\set_ac_on_threshold_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Screens\MenuScreens\SetTemperatureCurveScreen\set_temperature_curve_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Screens\screen_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Screens\MenuScreens\SetScreenTimeoutScreen\set_screen_timeout_screen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HCController.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Screens\screen_state_machine.cpp">
-      <Filter>Screens\MenuScreen\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Monitors\BaseMonitor\base_monitor.cpp">
       <Filter>Monitors\BaseMonitor\Source Files</Filter>
@@ -107,10 +110,19 @@
     <ClCompile Include="Monitors\CurveMonitor\curve_sensor_monitor.cpp">
       <Filter>Monitors\CurveMonitor\Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Screens\screen_state.cpp">
+    <ClCompile Include="UI\Screens\screen_state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Screens\MenuScreens\set_ac_on_threshold_screen.cpp">
+    <ClCompile Include="UI\Screens\MenuScreens\SetAcOnThresholdScreen\set_ac_on_threshold_screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Screens\MenuScreens\SetTemperatureCurveScreen\set_temperature_curve_screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Screens\screen_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Screens\MenuScreens\SetScreenTimeoutScreen\set_screen_timeout_screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

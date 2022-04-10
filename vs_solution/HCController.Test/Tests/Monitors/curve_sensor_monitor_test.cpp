@@ -1,6 +1,6 @@
-#include "../pch.h"
+#include "../../pch.h"
 
-#include "../Fixtures/Monitors/CurveMonitor/curve_sensor_monitor_test_fixture.h"
+#include "../../Fixtures/Monitors/CurveMonitor/curve_sensor_monitor_test_fixture.h"
 
 #include "Monitors/CurveMonitor/curve_sensor_monitor.h"
 

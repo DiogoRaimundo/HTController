@@ -1,6 +1,6 @@
-#include "../pch.h"
+#include "../../pch.h"
 
-#include "../Fixtures/Monitors/ThresholdMonitor/threshold_sensor_monitor_test_fixture.h"
+#include "../../Fixtures/Monitors/ThresholdMonitor/threshold_sensor_monitor_test_fixture.h"
 
 #include "Monitors/ThresholdMonitor/threshold_sensor_monitor.h"
 #include "Monitors/ThresholdMonitor/monitor_threshold_type.h"
