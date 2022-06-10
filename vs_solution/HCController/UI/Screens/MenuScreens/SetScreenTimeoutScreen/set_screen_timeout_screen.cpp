@@ -7,7 +7,7 @@ SetScreenTimeoutScreen::SetScreenTimeoutScreen(ScreenManager* screenManager) : S
 
 const char* SetScreenTimeoutScreen::getName()
 {
-	return "SetScreenTimeout";
+	return SetScreenTimeoutScreen::getScreenName();
 }
 
 ScreenState* SetScreenTimeoutScreen::triggerAction(UiAction action)
@@ -31,4 +31,9 @@ ScreenState* SetScreenTimeoutScreen::triggerAction(UiAction action)
 	}
 
 	return this;
+}
+
+const char* SetScreenTimeoutScreen::getScreenName()
+{
+	return "SetScreenTimeout";
 }

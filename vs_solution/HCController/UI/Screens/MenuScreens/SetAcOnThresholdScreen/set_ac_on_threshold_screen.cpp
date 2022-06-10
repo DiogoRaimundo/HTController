@@ -7,7 +7,7 @@ SetAcOnThresholdScreen::SetAcOnThresholdScreen(ScreenManager* screenManager) : S
 
 const char* SetAcOnThresholdScreen::getName()
 {
-	return "SetAcOnThreshold";
+	return SetAcOnThresholdScreen::getScreenName();
 }
 
 ScreenState* SetAcOnThresholdScreen::triggerAction(UiAction action)
@@ -31,4 +31,9 @@ ScreenState* SetAcOnThresholdScreen::triggerAction(UiAction action)
 	}
 
 	return this;
+}
+
+const char* SetAcOnThresholdScreen::getScreenName()
+{
+	return "SetAcOnThreshold";
 }

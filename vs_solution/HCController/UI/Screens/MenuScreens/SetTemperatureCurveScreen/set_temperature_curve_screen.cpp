@@ -7,7 +7,7 @@ SetTemperatureCurveScreen::SetTemperatureCurveScreen(ScreenManager* screenManage
 
 const char* SetTemperatureCurveScreen::getName()
 {
-	return "SetTemperatureCurve";
+	return SetTemperatureCurveScreen::getScreenName();
 }
 
 ScreenState* SetTemperatureCurveScreen::triggerAction(UiAction action)
@@ -31,4 +31,9 @@ ScreenState* SetTemperatureCurveScreen::triggerAction(UiAction action)
 	}
 
 	return this;
+}
+
+const char* SetTemperatureCurveScreen::getScreenName()
+{
+	return "SetTemperatureCurve";
 }

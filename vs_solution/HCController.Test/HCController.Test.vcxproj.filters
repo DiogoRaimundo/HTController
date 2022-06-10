@@ -50,6 +50,12 @@
     <ClCompile Include="Tests\UI\set_ac_on_threshold_screen_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tests\UI\set_screen_timeout_screen_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests\UI\set_temperature_curve_screen_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

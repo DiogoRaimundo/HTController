@@ -8,37 +8,37 @@
 #include "UI/Screens/MenuScreens/SetScreenTimeoutScreen/set_screen_timeout_screen.h"
 
 namespace HCControllerTests {
-	TEST(SetAcOnThresholdScreenTestFixture, CheckName)
+	TEST(SetScreenTimeoutScreenTestFixture, CheckName)
 	{
 		ScreenManager* screenManager = new ScreenManager();
-		ScreenState* state = new SetAcOnThresholdScreen(screenManager);
+		ScreenState* state = new SetScreenTimeoutScreen(screenManager);
 
 		std::string stateName = state->getName();
 
-		EXPECT_EQ(stateName, SetAcOnThresholdScreen::getScreenName());
+		EXPECT_EQ(stateName, SetScreenTimeoutScreen::getScreenName());
 	}
 
-	TEST(SetAcOnThresholdScreenTestFixture, CheckScreenOnScrollRight)
+	TEST(SetScreenTimeoutScreenTestFixture, CheckScreenOnScrollRight)
 	{
 		ScreenManager* screenManager = new ScreenManager();
-		ScreenState* state = new SetAcOnThresholdScreen(screenManager);
+		ScreenState* state = new SetScreenTimeoutScreen(screenManager);
 
 		ScreenState* newState = state->triggerAction(UiAction::ScrollRight);
 
 		std::string stateName = newState->getName();
 
-		EXPECT_EQ(stateName, SetTemperatureCurveScreen::getScreenName());
+		EXPECT_EQ(stateName, SetAcOnThresholdScreen::getScreenName());
 	}
 
-	TEST(SetAcOnThresholdScreenTestFixture, CheckScreenOnScrollLeft)
+	TEST(SetScreenTimeoutScreenTestFixture, CheckScreenOnScrollLeft)
 	{
 		ScreenManager* screenManager = new ScreenManager();
-		ScreenState* state = new SetAcOnThresholdScreen(screenManager);
+		ScreenState* state = new SetScreenTimeoutScreen(screenManager);
 
 		ScreenState* newState = state->triggerAction(UiAction::ScrollLeft);
 
 		std::string stateName = newState->getName();
 
-		EXPECT_EQ(stateName, SetScreenTimeoutScreen::getScreenName());
+		EXPECT_EQ(stateName, SetTemperatureCurveScreen::getScreenName());
 	}
 }
