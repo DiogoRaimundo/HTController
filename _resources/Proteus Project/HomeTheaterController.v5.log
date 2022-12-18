@@ -1,0 +1,6 @@
+# Writing all output to: E:\MEGA\Proteus Projects\Home Theater Protection Circuit\Arduino 328\HomeTheaterController.v5.log
+set pad_wire_necking on
+bus diagonal
+fanout 5
+route 50
+Process stopped!

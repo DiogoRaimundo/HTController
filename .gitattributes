@@ -1,1 +1,6 @@
 *.pptx filter=lfs diff=lfs merge=lfs -text
+*.PDF filter=lfs diff=lfs merge=lfs -text
+*.pdsprj filter=lfs diff=lfs merge=lfs -text
+*.pdsbak filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.7z filter=lfs diff=lfs merge=lfs -text
