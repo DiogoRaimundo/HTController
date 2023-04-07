@@ -1,4 +1,4 @@
-#include "set_screen_timeout_screen.h"
+#include "SetScreenTimeoutScreen.h"
 
 SetScreenTimeoutScreen::SetScreenTimeoutScreen(ScreenManager* screenManager) : ScreenState(screenManager)
 {

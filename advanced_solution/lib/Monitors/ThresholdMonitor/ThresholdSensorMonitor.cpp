@@ -1,6 +1,6 @@
-#include "threshold_sensor_monitor.h"
-#include "monitor_threshold_type.h"
-#include "monitor_trigger_type.h"
+#include "ThresholdSensorMonitor.h"
+#include "MonitorThresholdType.h"
+#include "MonitorTriggerType.h"
 
 ThresholdSensorMonitor::ThresholdSensorMonitor(int thresholdValue, MonitorThresholdType thresholdType, MonitorTriggerType triggerType, BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
 	BaseMonitor(triggerSensor, triggerActuator)

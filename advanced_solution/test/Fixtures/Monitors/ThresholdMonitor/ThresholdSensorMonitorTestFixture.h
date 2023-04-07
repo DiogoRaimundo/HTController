@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../BaseMonitor/base_sensor_monitor_test_fixture.h"
-#include "../lib/Monitors/ThresholdMonitor/threshold_sensor_monitor.h"
+#include "../BaseMonitor/BaseSensorMonitorTestFixture.h"
+#include "../lib/Monitors/ThresholdMonitor/ThresholdSensorMonitor.h"
 
 namespace HCControllerTests
 {

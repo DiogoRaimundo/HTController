@@ -1,4 +1,4 @@
-#include "curve_sensor_monitor_test_fixture.h"
+#include "CurveSensorMonitorTestFixture.h"
 
 using namespace HCControllerTests;
 

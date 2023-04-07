@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
 
-#include "Tests/Monitors/curve_sensor_monitor_test.cpp"
-#include "Tests/Monitors/threshold_sensor_monitor_test.cpp"
+#include "Tests/Monitors/CurveSensorMonitorTest.cpp"
+#include "Tests/Monitors/ThresholdSensorMonitorTest.cpp"
 
-#include "Tests/UI/set_ac_on_threshold_screen_test.cpp"
-#include "Tests/UI/set_screen_timeout_screen_test.cpp"
-#include "Tests/UI/set_temperature_curve_screen_test.cpp"
+#include "Tests/UI/SetCurrentThresholdScreenTest.cpp"
+#include "Tests/UI/SetScreenTimeoutScreenTest.cpp"
+#include "Tests/UI/SetTemperatureCurveScreenTest.cpp"
 
 int main(int argc, char **argv)
 {

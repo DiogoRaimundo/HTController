@@ -1,8 +1,8 @@
-#include "base_sensor_monitor_test_fixture.h"
+#include "BaseSensorMonitorTestFixture.h"
 
-#include "../lib/Monitors/BaseMonitor/base_monitor.h"
-#include "../lib/Monitors/BaseMonitor/base_monitor_sensor.h"
-#include "../lib/Monitors/BaseMonitor/base_monitor_actuator.h"
+#include "../lib/Monitors/BaseMonitor/BaseMonitor.h"
+#include "../lib/Monitors/BaseMonitor/BaseMonitorSensor.h"
+#include "../lib/Monitors/BaseMonitor/BaseMonitorActuator.h"
 
 using namespace HCControllerTests;
 

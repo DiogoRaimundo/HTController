@@ -1,4 +1,4 @@
-#include "curve_sensor_monitor.h"
+#include "CurveSensorMonitor.h"
 
 CurveSensorMonitor::CurveSensorMonitor(BaseMonitorSensor* triggerSensor, BaseMonitorActuator* triggerActuator) :
 	BaseMonitor(triggerSensor, triggerActuator)

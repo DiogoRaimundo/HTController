@@ -1,6 +1,6 @@
 #pragma once
 
-#include "screen_state.h"
+#include "ScreenState.h"
 
 class ScreenManager {
 private:

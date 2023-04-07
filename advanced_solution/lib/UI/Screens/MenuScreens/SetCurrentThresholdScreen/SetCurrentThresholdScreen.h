@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../screen_state.h"
-#include "../../screen_manager.h"
+#include "../../ScreenState.h"
+#include "../../ScreenManager.h"
 
 class SetAcOnThresholdScreen : public ScreenState {
 public:

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../BaseMonitor/base_monitor.h"
-#include "monitor_threshold_type.h"
-#include "monitor_trigger_type.h"
+#include "../BaseMonitor/BaseMonitor.h"
+#include "MonitorThresholdType.h"
+#include "MonitorTriggerType.h"
 
 class ThresholdSensorMonitor : public BaseMonitor {
 private:

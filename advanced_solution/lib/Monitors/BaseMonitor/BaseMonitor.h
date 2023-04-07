@@ -1,7 +1,7 @@
 #pragma once
 
-#include "base_monitor_sensor.h"
-#include "base_monitor_actuator.h"
+#include "BaseMonitorSensor.h"
+#include "BaseMonitorActuator.h"
 
 class BaseMonitor {
 protected:

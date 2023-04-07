@@ -1,9 +1,9 @@
-#include "../../Fixtures/Monitors/BaseMonitor/base_sensor_monitor_test_fixture.cpp"
-#include "../../Fixtures/Monitors/ThresholdMonitor/threshold_sensor_monitor_test_fixture.cpp"
+#include "../../Fixtures/Monitors/BaseMonitor/BaseSensorMonitorTestFixture.cpp"
+#include "../../Fixtures/Monitors/ThresholdMonitor/ThresholdSensorMonitorTestFixture.cpp"
 
-#include "../lib/Monitors/ThresholdMonitor/threshold_sensor_monitor.h"
-#include "../lib/Monitors/ThresholdMonitor/monitor_threshold_type.h"
-#include "../lib/Monitors/ThresholdMonitor/monitor_trigger_type.h"
+#include "../lib/Monitors/ThresholdMonitor/ThresholdSensorMonitor.h"
+#include "../lib/Monitors/ThresholdMonitor/MonitorThresholdType.h"
+#include "../lib/Monitors/ThresholdMonitor/MonitorTriggerType.h"
 
 namespace HCControllerTests
 {

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../screen_state.h"
-#include "../../screen_manager.h"
+#include "../../ScreenState.h"
+#include "../../ScreenManager.h"
 
 class SetTemperatureCurveScreen : public ScreenState {
 public:

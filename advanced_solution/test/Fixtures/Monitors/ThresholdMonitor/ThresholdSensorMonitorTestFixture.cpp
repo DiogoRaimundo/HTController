@@ -1,4 +1,4 @@
-#include "threshold_sensor_monitor_test_fixture.h"
+#include "ThresholdSensorMonitorTestFixture.h"
 
 using namespace HCControllerTests;
 

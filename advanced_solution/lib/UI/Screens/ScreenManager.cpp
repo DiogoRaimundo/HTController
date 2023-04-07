@@ -1,7 +1,7 @@
-#include "screen_manager.h"
-#include "MenuScreens/SetAcOnThresholdScreen/set_ac_on_threshold_screen.h"
-#include "MenuScreens/SetTemperatureCurveScreen/set_temperature_curve_screen.h"
-#include "MenuScreens/SetScreenTimeoutScreen/set_screen_timeout_screen.h"
+#include "ScreenManager.h"
+#include "MenuScreens/SetCurrentThresholdScreen/SetCurrentThresholdScreen.h"
+#include "MenuScreens/SetTemperatureCurveScreen/SetTemperatureCurveScreen.h"
+#include "MenuScreens/SetScreenTimeoutScreen/SetScreenTimeoutScreen.h"
 
 ScreenManager::ScreenManager() {
 	this->acOnThresholdMenuOption = new SetAcOnThresholdScreen(this);

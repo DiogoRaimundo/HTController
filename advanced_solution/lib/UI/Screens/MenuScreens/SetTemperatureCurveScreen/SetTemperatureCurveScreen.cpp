@@ -1,4 +1,4 @@
-#include "set_temperature_curve_screen.h"
+#include "SetTemperatureCurveScreen.h"
 
 SetTemperatureCurveScreen::SetTemperatureCurveScreen(ScreenManager* screenManager) : ScreenState(screenManager)
 {

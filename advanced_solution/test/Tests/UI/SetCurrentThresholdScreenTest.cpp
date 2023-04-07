@@ -1,10 +1,10 @@
-#include "../lib/UI/Screens/screen_state.h"
+#include "../lib/UI/Screens/ScreenState.h"
 
-#include "../lib/UI/ui_action.h"
+#include "../lib/UI/UiAction.h"
 
-#include "../lib/UI/Screens/MenuScreens/SetAcOnThresholdScreen/set_ac_on_threshold_screen.h"
-#include "../lib/UI/Screens/MenuScreens/SetTemperatureCurveScreen/set_temperature_curve_screen.h"
-#include "../lib/UI/Screens/MenuScreens/SetScreenTimeoutScreen/set_screen_timeout_screen.h"
+#include "../lib/UI/Screens/MenuScreens/SetCurrentThresholdScreen/SetCurrentThresholdScreen.h"
+#include "../lib/UI/Screens/MenuScreens/SetTemperatureCurveScreen/SetTemperatureCurveScreen.h"
+#include "../lib/UI/Screens/MenuScreens/SetScreenTimeoutScreen/SetScreenTimeoutScreen.h"
 
 namespace HCControllerTests
 {

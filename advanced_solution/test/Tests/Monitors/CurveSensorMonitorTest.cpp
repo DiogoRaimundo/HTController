@@ -1,6 +1,6 @@
-#include "../../Fixtures/Monitors/CurveMonitor/curve_sensor_monitor_test_fixture.cpp"
+#include "../../Fixtures/Monitors/CurveMonitor/CurveSensorMonitorTestFixture.cpp"
 
-#include "../lib/Monitors/CurveMonitor/curve_sensor_monitor.h"
+#include "../lib/Monitors/CurveMonitor/CurveSensorMonitor.h"
 
 namespace HCControllerTests
 {

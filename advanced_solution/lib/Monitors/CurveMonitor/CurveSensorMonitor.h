@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../BaseMonitor/base_monitor.h"
+#include "../BaseMonitor/BaseMonitor.h"
 
 #define CURVE_LENGTH 1024
 
